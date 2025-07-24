@@ -6,4 +6,5 @@ pandas
 openpyxl
 django-cors-headers
 drf-yasg
+gunicorn
 
