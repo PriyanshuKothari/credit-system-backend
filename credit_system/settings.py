@@ -88,16 +88,24 @@ WSGI_APPLICATION = "credit_system.wsgi.application"
 #         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('POSTGRES_DB', default='credit_db'),
+#         'USER': config('POSTGRES_USER', default='postgres'),
+#         'PASSWORD': config('POSTGRES_PASSWORD', default='postgres'),
+#         'HOST': config('POSTGRES_HOST', default='db'),
+#         'PORT': config('POSTGRES_PORT', default='5432'),
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('POSTGRES_DB', default='credit_db'),
-        'USER': config('POSTGRES_USER', default='postgres'),
-        'PASSWORD': config('POSTGRES_PASSWORD', default='postgres'),
-        'HOST': config('POSTGRES_HOST', default='db'),
-        'PORT': config('POSTGRES_PORT', default='5432'),
-    }
+    'default': dj_database_url.config(conn_max_age=600)
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators

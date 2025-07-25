@@ -7,4 +7,4 @@ openpyxl
 django-cors-headers
 drf-yasg
 gunicorn
-
+dj-database-url
